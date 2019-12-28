@@ -7,13 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class StartScan extends AppCompatActivity  {
+public class ChooseCustomer extends AppCompatActivity  {
 
     Button newCustomer,oldCustomer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.choose_customer);
         //String code = getIntent().getStringExtra("code");
 
         //loadFragment(new ItemsListRecyclerView());
@@ -24,7 +24,7 @@ public class StartScan extends AppCompatActivity  {
             public void onClick(View view) {
                 //crete new customer and new receipt in db
                 //scan item and add it
-                Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                Intent intent = new Intent(getBaseContext(), Scan.class);
 
                 startActivity(intent);
             }
@@ -36,7 +36,8 @@ public class StartScan extends AppCompatActivity  {
             @Override
             public void onClick(View view) {
                 //scan for customer id, retrieve items
-                Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                //replace
+                Intent intent = new Intent(getBaseContext(), JsonDataExample.class);
 
                 startActivity(intent);
             }

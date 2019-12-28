@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.SparseArray;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.vision.barcode.Barcode;
@@ -14,13 +13,13 @@ import java.util.List;
 
 import info.androidhive.barcode.BarcodeReader;
 
-public class MainActivity extends AppCompatActivity implements BarcodeReader.BarcodeReaderListener {
+public class Scan extends AppCompatActivity implements BarcodeReader.BarcodeReaderListener {
 
     BarcodeReader barcodeReader;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.scan);
         barcodeReader = (BarcodeReader) getSupportFragmentManager().findFragmentById(R.id.barcode_scanner);
 
     }
@@ -32,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements BarcodeReader.Bar
 
 
 
-            Intent intent = new Intent(getBaseContext(), Main2Activity.class);
+            Intent intent = new Intent(getBaseContext(), Receipt.class);
             intent.putExtra("code", barcode.displayValue);
             startActivity(intent);
 
