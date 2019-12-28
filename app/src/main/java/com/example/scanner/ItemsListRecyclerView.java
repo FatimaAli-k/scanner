@@ -5,8 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.TextView;
-
 
 
 import androidx.annotation.NonNull;
@@ -14,11 +12,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ItemsListRecyclerView extends Fragment {
     public static Fragment newInstance() {
@@ -61,7 +54,7 @@ public class ItemsListRecyclerView extends Fragment {
         }
 
         public RecyclerViewHolder(LayoutInflater inflater, ViewGroup container){
-            super(inflater.inflate(R.layout.item_fragment,container,false));
+            super(inflater.inflate(R.layout.item_row,container,false));
             mFrameLayout =itemView.findViewById(R.id.item_container);
 //            question =itemView.findViewById(R.id.questionTextView);
 //            answer =itemView.findViewById(R.id.answerTextView);

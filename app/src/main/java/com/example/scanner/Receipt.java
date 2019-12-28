@@ -13,9 +13,14 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class Receipt extends AppCompatActivity implements MyRecyclerViewAdapter.ItemClickListener {
+    String code;
 
-//    MyRecyclerViewAdapter adapter;
 
+
+
+
+    //    MyRecyclerViewAdapter adapter;
+ArrayList<Item> items = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,13 +29,16 @@ public class Receipt extends AppCompatActivity implements MyRecyclerViewAdapter.
 
 
         // data to populate the RecyclerView with
-        ArrayList<String> items = new ArrayList<>();
-        items.add(code);
+//        ArrayList<String> items = new ArrayList<>();
+//        items.add(code);
 //        items.add("434r3");
 //        items.add("r43r");
 //        items.add("343r");
 //        items.add("ffrf3");
 
+
+
+        prepareItemData();
         // set up the RecyclerView
 
         RecyclerView recyclerView = findViewById(R.id.items_recycler_view);
@@ -58,4 +66,14 @@ public class Receipt extends AppCompatActivity implements MyRecyclerViewAdapter.
     public void onItemClick(View view, int position) {
         Toast.makeText(this, "You clicked row number " + position, Toast.LENGTH_SHORT).show();
     }
-}
+    private void prepareItemData() {
+        code = getIntent().getStringExtra("code");
+        Item item=new Item(code,"name of product","5000$");
+        items.add(item);
+
+         item=new Item("id","name of product","5000$");
+        items.add(item);
+
+
+    }
+    }

@@ -37,7 +37,7 @@ public class ChooseCustomer extends AppCompatActivity  {
             public void onClick(View view) {
                 //scan for customer id, retrieve items
                 //replace
-                Intent intent = new Intent(getBaseContext(), JsonDataExample.class);
+                Intent intent = new Intent(getBaseContext(), Receipt.class);
 
                 startActivity(intent);
             }
