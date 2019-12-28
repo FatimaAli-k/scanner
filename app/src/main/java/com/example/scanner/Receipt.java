@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.scanner.Model.Item;
+
 import java.util.ArrayList;
 
 public class Receipt extends AppCompatActivity implements MyRecyclerViewAdapter.ItemClickListener {
