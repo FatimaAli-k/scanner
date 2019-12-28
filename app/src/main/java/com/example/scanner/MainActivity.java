@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements BarcodeReader.Bar
 
 
 
-            Intent intent = new Intent(getBaseContext(), BarcodeResultActivity.class);
+            Intent intent = new Intent(getBaseContext(), Main2Activity.class);
             intent.putExtra("code", barcode.displayValue);
             startActivity(intent);
 

@@ -1,27 +1,41 @@
 package com.example.scanner;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class StartScan extends AppCompatActivity  {
 
-    Button startScan,b2;
+    Button newCustomer,oldCustomer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start_scan);
+        setContentView(R.layout.activity_main2);
+        //String code = getIntent().getStringExtra("code");
 
-        startScan= findViewById(R.id.scan);
+        //loadFragment(new ItemsListRecyclerView());
+        newCustomer = findViewById(R.id.new_customer);
 
-        startScan.setOnClickListener(new View.OnClickListener() {
+        newCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //crete new customer and new receipt in db
+                //scan item and add it
+                Intent intent = new Intent(getBaseContext(), MainActivity.class);
+
+                startActivity(intent);
+            }
+
+        });
+       oldCustomer = findViewById(R.id.old_customer);
+
+        oldCustomer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //scan for customer id, retrieve items
                 Intent intent = new Intent(getBaseContext(), MainActivity.class);
 
                 startActivity(intent);
@@ -29,29 +43,22 @@ public class StartScan extends AppCompatActivity  {
 
         });
 
-        b2= findViewById(R.id.button2);
 
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                loadFragment(new ItemsListRecyclerView());
-            }
 
-        });
 
 
 
     }
-    private boolean loadFragment(Fragment fragment) {
-        //switching fragment
-        if (fragment != null) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
-                    .commit();
-            return true;
-        }
-
-        return false;
-    }
+//    private boolean loadFragment(Fragment fragment) {
+//        //switching fragment
+//        if (fragment != null) {
+//            getSupportFragmentManager()
+//                    .beginTransaction()
+//                    .replace(R.id.fragment_container, fragment)
+//                    .commit();
+//            return true;
+//        }
+//
+//        return false;
+//    }
 }
